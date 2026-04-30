@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Clone</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Highlight.js for code block styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <!-- Mobile Sidebar Overlay -->
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button id="menu-close-btn" class="icon-btn menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button id="new-chat-sidebar-btn" class="icon-btn new-chat-sidebar-btn" title="New Chat">
+                    <i class="fa-solid fa-plus"></i> <span class="new-chat-text">New chat</span>
+                </button>
+            </div>
+            <div class="history-list" id="history-list">
+                <p class="history-label">Recent</p>
+                <div class="history-items" id="history-items">
+                    <!-- History items injected here -->
+                </div>
+            </div>
+        </aside>
+
+        <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button id="menu-open-btn" class="icon-btn menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="logo">
+                    <i class="fa-solid fa-sparkles gradient-text"></i>
+                    <h2>Gemini Clone</h2>
+                </div>
+            </div>
+            <button id="new-chat-btn" class="icon-btn" title="New Chat">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </header>
+
+        <!-- Chat Container -->
+        <main class="chat-container" id="chat-container">
+            <!-- Initial Welcome Message -->
+            <div class="welcome-screen" id="welcome-screen">
+                <h1 class="gradient-text">Hello, there.</h1>
+                <p>How can I help you today?</p>
+            </div>
+            <!-- Messages will be injected here -->
+        </main>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <div id="image-preview-container" class="image-preview-container" style="display: none;">
+                <img id="image-preview" src="" alt="Preview">
+                <button id="remove-image-btn" class="remove-image-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="input-wrapper">
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                <button id="upload-btn" class="icon-btn upload-btn" title="Upload Image">
+                    <i class="fa-regular fa-image"></i>
+                </button>
+                <textarea id="prompt-input" placeholder="Enter a prompt here" rows="1"></textarea>
+                <button id="send-btn" class="send-btn" disabled>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+            <p class="disclaimer">Gemini Clone may display inaccurate info, including about people, so double-check its responses.</p>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
